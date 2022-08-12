@@ -1,0 +1,9 @@
+<div className="nav">
+    <h3 className="nameDisplay">Employee</h3>
+    <div className="button-wrapper">
+        <button className="interactButton" ng-click="setOpeningAddModal(true)"><i class="fa-solid fa-circle-plus"></i></button>
+        <button className="interactButton" ng-click="setOpeningDelModal(true)"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+    <div ng-show="isOpeningAddModal">OPENING ADD MODAL</div>
+    <div ng-show="isOpeningDelModal">OPENING DEL MODAL</div>
+</div>

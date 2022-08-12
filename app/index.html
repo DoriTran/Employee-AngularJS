@@ -7,22 +7,34 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- build:bower.css -->
   <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
   <link rel="stylesheet" href="bower_components/select2-bootstrap/select2-bootstrap.css">
+  <link rel="stylesheet" href="bower_components/Font-Awesome/css/all.css">
+  <!-- build:cdn.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
 
+  <!-- build:css -->
+  <link rel="stylesheet" href="./src/components/Navbar/Navbar.css">
+
+  <link rel="stylesheet" href="./src/pages/employee/Employee.css">
+  <link rel="stylesheet" href="./src/components/employee/SearchBar/SearchBar.css">
+  <link rel="stylesheet" href="./src/components/employee/EmployeeInteraction/EmployeeInteraction.css">
+    
 </head>
 <body ng-app="app">
-  <ng-view></ng-view>
-  <div>Hello?</div>
   <div ui-view></div>
   <!-- build angular js -->
     <!-- ASSETS -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"></script>
+
+
 
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -41,11 +53,11 @@
     <!-- / -->
 
     <!-- COMPONENTS -->
-  <!-- <script src="./src/components/Navbar/Navbar.js"></script>
+  <script src="./src/components/Navbar/Navbar.js"></script>
 
   <script src="./src/pages/employee/Employee.js"></script>
   <script src="./src/components/employee/SearchBar/SearchBar.js"></script>
-  <script src="./src/components/employee/EmployeeInteraction/EmployeeInteraction.js"></script> -->
+  <script src="./src/components/employee/EmployeeInteraction/EmployeeInteraction.js"></script>
   
     <!-- / -->
 
@@ -54,7 +66,7 @@
     <!-- / -->
 
     <!-- SERVICES -->
-  <!-- <script src="./src/services/employee/getAllEmployee.js"></script> -->
+  <script src="./src/services/employee/getAllEmployee.js"></script>
     <!-- / -->
 
   <!-- endbuild -->
