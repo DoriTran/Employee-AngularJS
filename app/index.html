@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="./src/pages/employee/Employee.css">
   <link rel="stylesheet" href="./src/components/employee/SearchBar/SearchBar.css">
   <link rel="stylesheet" href="./src/components/employee/EmployeeInteraction/EmployeeInteraction.css">
-    
+  <link rel="stylesheet" href="./src/components/employee/SearchResult/SearchResult.css">
+  <link rel="stylesheet" href="./src/components/employee/Pagination/Pagination.css">
+
 </head>
 <body ng-app="app">
   <div ui-view></div>
@@ -50,13 +52,17 @@
     <!-- MODULES -->
   <script src="app.js"></script>
     <!-- / -->
+    
 
+    
     <!-- COMPONENTS -->
   <script src="./src/components/Navbar/Navbar.js"></script>
 
   <script src="./src/pages/employee/Employee.js"></script>
   <script src="./src/components/employee/SearchBar/SearchBar.js"></script>
   <script src="./src/components/employee/EmployeeInteraction/EmployeeInteraction.js"></script>
+  <script src="./src/components/employee/SearchResult/SearchResult.js"></script>
+  <script src="./src/components/employee/Pagination/Pagination.js"></script>
   
     <!-- / -->
 
@@ -65,7 +71,16 @@
     <!-- / -->
 
     <!-- SERVICES -->
+  <script src="./src/services/api-url.js"></script>
+
   <script src="./src/services/employee/getAllEmployee.js"></script>
+
+  <script src="./src/services/team/getAllTeam.js"></script>
+    <!-- / -->
+
+  <!-- UTILS -->
+  <script src="./src/utils/useChange.js"></script>
+  <script src="./src/utils/useChangeBreak.js"></script>
     <!-- / -->
 
   <!-- endbuild -->

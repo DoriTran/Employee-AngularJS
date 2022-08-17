@@ -1,6 +1,6 @@
 angular.module('app').component('employeeInteraction', {
     templateUrl: '/src/components/employee/EmployeeInteraction/EmployeeInteraction.html',
-    controller: function NavbarController() {
+    controller: function EmployeeInteractionController() {
         this.isOpeningAddModal = false;
         this.setOpeningAddModal = function (status) {
             this.isOpeningAddModal = status
@@ -12,7 +12,7 @@ angular.module('app').component('employeeInteraction', {
             this.isOpeningDelModal = status
         }
     },
-    controllerAs: 'NavbarCtrl',
+    controllerAs: 'employeeInteractionCtrl',
     bindings: {
         checkedID: '=',
         checkAll: '=',

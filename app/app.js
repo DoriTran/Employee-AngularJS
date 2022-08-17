@@ -37,7 +37,7 @@ angular.module('app', [
   $stateProvider
     .state('employee', {
       url: "/employee",
-      templateUrl: 'src/pages/employee/Employee.html'
+      template: '<employee></employee>',
     })
     .state('team', {
       url: "/team",

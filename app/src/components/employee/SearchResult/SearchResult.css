@@ -1,0 +1,66 @@
+table.search-results-container tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table.search-results-container {
+    width: 100%;
+    line-height: 50px;
+    font-size: 15px;
+}
+
+table.search-results-container th:nth-child(1) {
+    text-align: center;
+}
+
+table.search-results-container th:last-child {
+    text-align: center;
+}
+
+.check-box-search-results {
+    width: 30%;
+    height: 100%;
+    margin: none;
+}
+
+table.search-results-container td:nth-child(1) {
+    width: 5%;
+    text-align: center;
+}
+
+table.search-results-container td:nth-child(2) {
+    width: 5%;
+}
+
+table.search-results-container td:nth-child(3) {
+    width: 35%;
+}
+
+table.search-results-container td:nth-child(4) {
+    width: 25%;
+}
+
+table.search-results-container td:nth-child(5) {
+    width: 25%; 
+}
+
+table.search-results-container td:nth-child(6) {
+    width: 15%;
+}
+
+.option-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    font-size: 25px;
+}
+
+.info-button {
+    color: blue;
+    cursor: pointer;
+}
+
+.delete-button {
+    cursor: pointer;
+}

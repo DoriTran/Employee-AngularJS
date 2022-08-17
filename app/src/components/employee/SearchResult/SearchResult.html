@@ -1,0 +1,38 @@
+<table class="search-results-container">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" class="check-box-search-results"
+                ng-model="ischeckall"
+                ng-checked="searchResultCtrl.isCheckAll()"
+                ng-click="searchResultCtrl.handleCheckAll()"/>
+            </th>
+            <th>No</th>
+            <th>FullName</th>
+            <th>Phone</th>
+            <th>Team</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr ng-repeat="employee in searchResultCtrl.filter_results">
+            <td>
+                <input type="checkbox" class="check-box-search-results"
+                ng-model="checklist"
+                ng-checked="searchResultCtrl.isChecked(employee.no)"
+                ng-click="searchResultCtrl.handleCheck(employee.no)"/>
+            </td>
+            <td>{{employee.no}}</td>
+            <td>{{employee.fullName}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{searchResultCtrl.getTeamName(employee.teamNo)}}</td>
+            <td>
+                <div class="option-wrapper">
+                    <a ui-sref="/profile/id=employee.no" class="info-button"><i class="fa-solid fa-info"></i></a>
+                    <i class="fa-solid fa-trash-can delete-butto" ng-click="searchResultCtrl.deleteHandler(employee.no)"></i>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
