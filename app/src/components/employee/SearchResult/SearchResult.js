@@ -41,12 +41,12 @@ angular.module('app').component('searchResult', {
 
         // Lifecycle hooks
         this.$onChanges = (changes) => {
-            console.log(changes)
             // Still loading
-            useChangeBreak(() => {
+            if (useChangeBreakCallBack(() => {
                 this.filter_results = []
-                return
-            }, [changes.data, changes.teams]) 
+            }, [changes.data])) return
+
+            if (useChangeBreak([changes.teams])) return
 
             // Update page content
             useChange(() => {

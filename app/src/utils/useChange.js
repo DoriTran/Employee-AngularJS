@@ -1,11 +1,10 @@
-const useChange = function(effectFunction, checkVariables) {
-    checkVariables.forEach(variable => {
+function useChange(effectFunction, checkVariables) {
+    for (const variable of checkVariables) {
         if (variable) {
             if (variable.currentValue !== variable.previousValue) {
                 effectFunction()
                 return
             }
         }
-    })
-    return false
+    }
 }

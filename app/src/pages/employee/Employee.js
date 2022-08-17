@@ -5,10 +5,6 @@ angular.module('app').component('employee', {
         this.page = 1
         this.maxpage = 1
         this.total = 1
-        this.results = []
-
-        // Team Fetch
-        this.teams = []
 
         // Controller
         this.searchKey = ""        
