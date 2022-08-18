@@ -24,9 +24,13 @@
   <link rel="stylesheet" href="./src/components/employee/SearchResult/SearchResult.css">
   <link rel="stylesheet" href="./src/components/employee/Pagination/Pagination.css">
 
+  <link rel="stylesheet" href="./src/overlay/Modal/Modal.css">
+  <link rel="stylesheet" href="./src/overlay/Modal/ModalRow.css">
+  <link rel="stylesheet" href="./src/overlay/Modal/ModalContent.css">
 </head>
 <body ng-app="app">
   <div ui-view></div>
+  <div id="root-portal"></div>
   <!-- build angular js -->
     <!-- ASSETS -->
 
@@ -53,8 +57,6 @@
   <script src="app.js"></script>
     <!-- / -->
     
-
-    
     <!-- COMPONENTS -->
   <script src="./src/components/Navbar/Navbar.js"></script>
 
@@ -63,11 +65,15 @@
   <script src="./src/components/employee/EmployeeInteraction/EmployeeInteraction.js"></script>
   <script src="./src/components/employee/SearchResult/SearchResult.js"></script>
   <script src="./src/components/employee/Pagination/Pagination.js"></script>
-  
     <!-- / -->
 
-    <!-- PAGES -->
+    <!-- OVERLAY -->
+  <script src="./src/overlay/Modal/Modal.js"></script>
+  <script src="./src/overlay/Modal/InputRow/InputRow.js"></script>
+  <script src="./src/overlay/Modal/SelectRow/SelectRow.js"></script>
+  <script src="./src/overlay/Modal/FileRow/FileRow.js"></script>
 
+  <script src="./src/overlay/AddEmployeeModal/AddEmployeeModal.js"></script>
     <!-- / -->
 
     <!-- SERVICES -->
@@ -78,11 +84,12 @@
   <script src="./src/services/team/getAllTeam.js"></script>
     <!-- / -->
 
-  <!-- UTILS -->
+    <!-- UTILS -->
   <script src="./src/utils/useChange.js"></script>
   <script src="./src/utils/useChangeBreak.js"></script>
   <script src="./src/utils/toLowerCaseNonAccentVietnamese.js"></script>
   <script src="./src/utils/toNonAccentVietnamese.js"></script>
+  <script src="./src/utils/stringWrapper.js"></script>
     <!-- / -->
 
   <!-- endbuild -->

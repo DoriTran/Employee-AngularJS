@@ -1,0 +1,14 @@
+<div class="main">
+    <span>{{inputRowCtrl.label}}<span style="color: red">{{inputRowCtrl.warning}}</span></span>
+    <input
+        type={{inputRowCtrl.type}}
+        name={{inputRowCtrl.name}}
+        placeholder={{inputRowCtrl.placeholder}}
+        max={{inputRowCtrl.max}}
+        min="{{inputRowCtrl.min}}"
+
+        ng-model="inputRowCtrl.input"
+        ng-required="inputRowCtrl.required"
+        ng-disabled="inputRowCtrl.disabled"
+        ng-change="inputRowCtrl.handleInput()"  />
+</div>

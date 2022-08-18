@@ -1,6 +1,6 @@
 angular.module('app').component('searchBar', {
     templateUrl: 'src/components/employee/SearchBar/SearchBar.html',
-    controller: function SearchBarController() {
+    controller: function searchBarController() {
 
     },
     controllerAs: 'searchBarCtrl',

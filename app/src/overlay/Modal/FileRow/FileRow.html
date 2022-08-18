@@ -1,0 +1,12 @@
+<div class="main">
+    <span>{props.label}</span>
+    <input
+        type="file"
+        name={{fileRowCtrl.name}}
+        multiple={{fileRowCtrl.multiple}}
+
+        ng-model="fileRowCtrl.input"
+        ng-required="fileRowCtrl.required"
+        ng-disabled="fileRowCtrl.disabled"
+        ng-change="fileRowCtrl.handleInput()" />
+</div>

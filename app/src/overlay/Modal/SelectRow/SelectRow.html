@@ -1,0 +1,27 @@
+<div class="main">
+    <span>{{selectRowCtrl.label}}<span style="color: red">{{selectRowCtrl.warning}}</span></span>
+    
+    <select
+        
+        ng-model="selectRowCtrl.input"
+        ng-required="selectRowCtrl.required"
+        ng-disabled="selectRowCtrl.disabled"
+
+        ng-change="selectRowCtrl.handleInput()"
+         >
+
+        <option 
+            ng-if="selectRowCtrl.options !== undefined"
+            ng-selected="selectRowCtrl.input === op" 
+            ng-repeat="op in selectRowCtrl.options" 
+            ng-value="op">{{op}}</option>  
+            
+        <option 
+            ng-if="selectRowCtrl.pairs !== undefined"
+            ng-selected="selectRowCtrl.input === op.value" 
+            ng-repeat="op in selectRowCtrl.pairs" 
+            ng-value="op.value">{{op.option}}</option>  
+    </select>
+    
+</div>
+<!-- onfocus='this.size=3;' onblur='this.size=1;' onchange='this.size=1; this.blur();' -->

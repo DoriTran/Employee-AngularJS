@@ -1,0 +1,57 @@
+<modal show="addEmployeeModalCtrl.show" setshow="addEmployeeModalCtrl.setshow(status)">
+    <div class="modal-header">Add new Employee</div>
+    <div class="modal-container">
+        <form class="modal-body" ng-submit="submitHandler()">
+            <div class="modal-info">
+                <div class="modal-single">
+                    <input-row class="full-row"
+                    required label="'Full name employee'" placeholder="Nguyễn Văn A" 
+                               input="addEmployeeModalCtrl.fullName" maxLength="255"></input-row>
+                    <span ng-style="{'textAlign': 'right', 'width': '100%'}">{{addEmployeeModalCtrl.fullName.length}}/255</span>
+                </div>
+            </div>
+            <div class="modal-info">
+                <div class="modal-left">       
+                    <input-row class="full-row"
+                                required label="'Address *'" placeholder="123, Cầu Giấy, Hà Nội" 
+                                input="addEmployeeModalCtrl.address" maxLength="300"></input-row>
+                    <input-row class="full-row"
+                                required label="'Age employee *'" placeholder="18" type="number"
+                                input="addEmployeeModalCtrl.age"></input-row>
+                    <input-row class="full-row"
+                                required label="'Money/hour *'" placeholder="1000" type="number"
+                                input="addEmployeeModalCtrl.moneyHour"/>                       
+                </div>
+                <div class="modal-right">
+                    <select-row class="full-row"
+                                required label="'Sex employee *'" options="['Male', 'Female']"
+                                input="addEmployeeModalCtrl.sex"></select-row>
+                    <input-row class="full-row"
+                                required label="'Start day *'" type="date"
+                                input="addEmployeeModalCtrl.startDate"></input-row>
+                    <input-row class="full-row"
+                                required label="'Phone number *'" placeholder="0123456789" regex="^([+]|[0-9]){0,1}[0-9]{0,12}$"
+                                input="addEmployeeModalCtrl.phone" maxLength="12"/>
+                </div>
+            </div>
+            <div class="modal-info">
+                <div class="modal-single">
+                    <select-row class="full-row"
+                                required label="'Team *'" pairs="addEmployeeModalCtrl.teamOptions"
+                                input="addEmployeeModalCtrl.teamNo"/>
+                </div>
+            </div>
+            <div class="modal-button-group">
+                <button ng-disabled="mutateNewEmployee.isLoading"
+                    ng-style="{'backgroundColor':'transparent', 'color':'black'}"
+                    ng-click="addEmployeeModalCtrl.setshow(false)">
+                        Cancel
+                </button>
+                <button ng-disabled="mutateNewEmployee.isLoading" type="submit"
+                    ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}">
+                        Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</modal>

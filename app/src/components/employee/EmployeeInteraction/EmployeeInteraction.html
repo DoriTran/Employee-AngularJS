@@ -1,9 +1,10 @@
 <div class="interact-nav">
     <h3 class="interact-nameDisplay">Employee</h3>
     <div class="interact-button-wrapper">
-        <button class="interactButton" ng-click="setOpeningAddModal(true)"><i class="fa-solid fa-circle-plus"></i></button>
-        <button class="interactButton" ng-click="setOpeningDelModal(true)"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="interactButton" ng-click="employeeInteractionCtrl.setOpeningAddModal(true)"><i class="fa-solid fa-circle-plus"></i></button>
+        <button class="interactButton" ng-click="employeeInteractionCtrl.setOpeningDelModal(true)"><i class="fa-solid fa-trash-can"></i></button>
     </div>
-    <div ng-show="employeeInteractionCtrl.isOpeningAddModal">OPENING ADD MODAL {{employeeInteractionCtrl.checkedID}}</div>
+    <add-employee-modal show="employeeInteractionCtrl.isOpeningAddModal" setshow="employeeInteractionCtrl.setOpeningAddModal(status)"
+         teams="employeeInteractionCtrl.teams"></add-employee-modal>
     <div ng-show="employeeInteractionCtrl.isOpeningDelModal">OPENING DEL MODAL {{employeeInteractionCtrl.isOpeningDelModal}}</div>
 </div>

@@ -5,8 +5,6 @@ angular.module('app').component('employeeInteraction', {
         this.setOpeningAddModal = function (status) {
             this.isOpeningAddModal = status
         }
-
-        // opening del modal status
         this.isOpeningDelModal = false;
         this.setOpeningDelModal = function (status) {
             this.isOpeningDelModal = status
@@ -14,6 +12,7 @@ angular.module('app').component('employeeInteraction', {
     },
     controllerAs: 'employeeInteractionCtrl',
     bindings: {
+        teams: '<',
         checkedID: '=',
         checkAll: '=',
     }

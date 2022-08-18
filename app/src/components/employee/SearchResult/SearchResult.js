@@ -39,7 +39,7 @@ angular.module('app').component('searchResult', {
             }         
             else {
                 this.checked = [...this.checked, newCheckedID]
-            }console.log(this.checked)
+            }
         }
 
         this.getTeamName = (teamNo) => {
@@ -61,7 +61,6 @@ angular.module('app').component('searchResult', {
 
             // Update page content
             useChange(() => {
-                console.log(this.searchkey)
                 let search_result = this.data.filter(
                     employee => toLowerCaseNonAccentVietnamese(employee.fullName)
                     .includes(toLowerCaseNonAccentVietnamese(this.searchkey)))
