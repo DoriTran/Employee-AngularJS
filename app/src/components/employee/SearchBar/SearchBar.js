@@ -5,7 +5,7 @@ angular.module('app').component('searchBar', {
     },
     controllerAs: 'searchBarCtrl',
     bindings: {
-        searchKey: "=",
+        searchkey: "=",
         total: '<'
     }
 })

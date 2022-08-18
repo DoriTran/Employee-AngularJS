@@ -1,14 +1,15 @@
 <navbar selected="Employee"></navbar>
 <employee-interaction
     checkedID="employeeCtrl.checkedID" checkAll="employeeCtrl.checkAll"></employee-interaction>
-<search-bar searchKey="employeeCtrl.searchKey" total="employeeCtrl.total"></search-bar>
+<search-bar searchKey="employeeCtrl.searchkey" total="employeeCtrl.total"></search-bar>
 <div class="search-result-label-wrapper">
     <d class="search-result-label">Search result</div>
 </div>
 <search-result
     page="employeeCtrl.page"
+    searchKey="employeeCtrl.searchkey"
     data="employeeCtrl.employee_data"
     teams="employeeCtrl.teams"
-    checked="employeeCtrl.checkedID" checkall="employeeCtrl.checkAll" 
+    checked="employeeCtrl.checked" checkall="employeeCtrl.checkall" 
     ></search-result>
 <pagination page="employeeCtrl.page" maxpage="employeeCtrl.maxpage"></pagination>

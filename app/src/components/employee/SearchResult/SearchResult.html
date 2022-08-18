@@ -3,7 +3,6 @@
         <tr>
             <th>
                 <input type="checkbox" class="check-box-search-results"
-                ng-model="ischeckall"
                 ng-checked="searchResultCtrl.isCheckAll()"
                 ng-click="searchResultCtrl.handleCheckAll()"/>
             </th>
@@ -19,7 +18,6 @@
         <tr ng-repeat="employee in searchResultCtrl.filter_results">
             <td>
                 <input type="checkbox" class="check-box-search-results"
-                ng-model="checklist"
                 ng-checked="searchResultCtrl.isChecked(employee.no)"
                 ng-click="searchResultCtrl.handleCheck(employee.no)"/>
             </td>

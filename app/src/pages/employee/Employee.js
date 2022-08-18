@@ -7,9 +7,9 @@ angular.module('app').component('employee', {
         this.total = 1
 
         // Controller
-        this.searchKey = ""        
-        this.checkedID = []
-        this.checkAll = false
+        this.searchkey = ""        
+        this.checked = []
+        this.checkall = false
 
         getAllEmployee.get().then(response => { 
             this.employee_data = response.data
