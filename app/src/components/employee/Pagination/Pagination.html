@@ -3,18 +3,18 @@
         ng-click="paginationCtrl.handlePage(-1)"
         ng-disabled="paginationCtrl.page <= 1">«</button>
     
-    <button ng-if="paginationCtrl.page - 2 >= 1 && paginationCtrl.page === paginationCtrl.maxpage" 
+    <button ng-if="paginationCtrl.page - 2 >= 1 && paginationCtrl.page === paginationCtrl.maxPage" 
         ng-click="paginationCtrl.handlePage(-2)">{{paginationCtrl.page - 2}}</button>
     <button ng-if="paginationCtrl.page - 1 >= 1"
         ng-click="paginationCtrl.handlePage(-1)">{{paginationCtrl.page - 1}}</button>
     <button ng-if="paginationCtrl.page !== 0"
         class="current-page-btn">{{paginationCtrl.page}}</button>
-    <button ng-if="paginationCtrl.page + 1 <= paginationCtrl.maxpage"
+    <button ng-if="paginationCtrl.page + 1 <= paginationCtrl.maxPage"
         ng-click="paginationCtrl.handlePage(1)">{{paginationCtrl.page + 1}}</button>
-    <button ng-if="paginationCtrl.page + 2 <= paginationCtrl.maxpage && paginationCtrl.page === 1"
+    <button ng-if="paginationCtrl.page + 2 <= paginationCtrl.maxPage && paginationCtrl.page === 1"
         ng-click="paginationCtrl.handlePage(2)">{{paginationCtrl.page + 2}}</button>
     
     <button class="btn btn-primary" 
         ng-click="paginationCtrl.handlePage(1)"
-        ng-disabled="paginationCtrl.page + 1 > paginationCtrl.maxpage">»</button>
+        ng-disabled="paginationCtrl.page + 1 > paginationCtrl.maxPage">»</button>
 </div>

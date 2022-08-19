@@ -3,11 +3,14 @@ angular.module('app').component('employee', {
     controller: function EmployeeController(getAllEmployee, getAllTeam) {
         // Employee Fetch
         this.page = 1
-        this.maxpage = 1
+        this.setpage = function (newpage) {
+            this.page = newpage
+        }
+        this.maxPage = 1
         this.total = 1
 
         // Controller
-        this.searchkey = ""        
+        this.searchkey = ""
         this.checked = []
         this.checkall = false
 
@@ -15,7 +18,7 @@ angular.module('app').component('employee', {
             this.employee_data = response.data
             this.page = response.data.length !== 0 ? 1 : 0
             this.total = response.data.length
-            this.maxpage = Math.ceil(this.total / 10)
+            this.maxPage = Math.ceil(this.total / 10)
         })  
         getAllTeam.get().then(response => {
             this.teams = response.data

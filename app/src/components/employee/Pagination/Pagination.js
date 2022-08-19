@@ -8,6 +8,6 @@ angular.module('app').component('pagination', {
     controllerAs: 'paginationCtrl',
     bindings: {
         page: '=',
-        maxpage: '='
+        maxPage: '='
     }
 })
