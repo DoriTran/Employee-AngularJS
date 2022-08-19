@@ -1,11 +1,12 @@
 <div class="main">
-    <span>{{inputRowCtrl.label}}<span style="color: red">{{inputRowCtrl.warning}}</span></span>
+    <span>{{inputRowCtrl.label}}<br><span class="warning-label">{{inputRowCtrl.warning}}</span></span>
     <input
         type={{inputRowCtrl.type}}
         name={{inputRowCtrl.name}}
         placeholder={{inputRowCtrl.placeholder}}
         max={{inputRowCtrl.max}}
         min="{{inputRowCtrl.min}}"
+        maxlength="{{inputRowCtrl.maxLength}}"
 
         ng-model="inputRowCtrl.input"
         ng-required="inputRowCtrl.required"

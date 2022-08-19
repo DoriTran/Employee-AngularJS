@@ -15,6 +15,11 @@
     color: gray;
 }
 
+.main .warning-label {
+    font-size: 10px;
+    color: red;
+}
+
 .main input,select {
     flex: 1;
     font-size: 20px;

@@ -5,6 +5,7 @@
         <button class="interactButton" ng-click="employeeInteractionCtrl.setOpeningDelModal(true)"><i class="fa-solid fa-trash-can"></i></button>
     </div>
     <add-employee-modal show="employeeInteractionCtrl.isOpeningAddModal" setshow="employeeInteractionCtrl.setOpeningAddModal(status)"
-         teams="employeeInteractionCtrl.teams"></add-employee-modal>
-    <div ng-show="employeeInteractionCtrl.isOpeningDelModal">OPENING DEL MODAL {{employeeInteractionCtrl.isOpeningDelModal}}</div>
+        teams="employeeInteractionCtrl.teams"></add-employee-modal>
+    <delete-employee-dialog show="employeeInteractionCtrl.isOpeningDelModal" setshow="employeeInteractionCtrl.setOpeningDelModal(status)"
+        checked="employeeInteractionCtrl.checked"></delete-employee-dialog>
 </div>

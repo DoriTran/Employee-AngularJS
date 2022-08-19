@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="./src/overlay/Modal/Modal.css">
   <link rel="stylesheet" href="./src/overlay/Modal/ModalRow.css">
   <link rel="stylesheet" href="./src/overlay/Modal/ModalContent.css">
+
+  <link rel="stylesheet" href="./src/overlay/Dialog/Dialog.css">
+  <link rel="stylesheet" href="./src/overlay/Dialog/DialogContent.css">
 </head>
 <body ng-app="app">
   <div ui-view></div>
@@ -72,14 +75,20 @@
   <script src="./src/overlay/Modal/InputRow/InputRow.js"></script>
   <script src="./src/overlay/Modal/SelectRow/SelectRow.js"></script>
   <script src="./src/overlay/Modal/FileRow/FileRow.js"></script>
-
   <script src="./src/overlay/AddEmployeeModal/AddEmployeeModal.js"></script>
+  
+  <script src="./src/overlay/Dialog/Dialog.js"></script>
+  <script src="./src/overlay/DeleteEmployeeDialog/DeleteEmployeeDialog.js"></script>
+
+
     <!-- / -->
 
     <!-- SERVICES -->
   <script src="./src/services/api-url.js"></script>
 
   <script src="./src/services/employee/getAllEmployee.js"></script>
+  <script src="./src/services/employee/postEmployee.js"></script>
+  <script src="./src/services/employee/deleteListEmployee.js"></script>
 
   <script src="./src/services/team/getAllTeam.js"></script>
     <!-- / -->
