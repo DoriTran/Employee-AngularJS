@@ -57,10 +57,12 @@ table.search-results-container td:nth-child(6) {
 }
 
 .info-button {
+    pointer-events: auto;
     color: blue;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .delete-button {
-    cursor: pointer;
+    pointer-events: auto;
+    cursor: pointer !important;
 }

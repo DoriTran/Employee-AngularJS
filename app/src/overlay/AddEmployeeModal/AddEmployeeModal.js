@@ -1,68 +1,79 @@
-angular.module('app').component('addEmployeeModal', {
-    templateUrl: 'src/overlay/AddEmployeeModal/AddEmployeeModal.html', 
-    controller: function AddEmployeeModalController($scope, postEmployee) {
-        // Form update
-        this.$onChanges = (changes) => { 
-            useChange(()=> {
-                this.fullName = ""
-                this.address = ""
-                this.age = 0
-                this.moneyHour = 0
-                this.sex = "Female"
-                this.startDate = new Date()
-                this.phone = ""
-                this.teamNo = 0
-            }, [changes.show])
+angular.module('app').directive('addEmployeeModal', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            teams: "=",
+            isShow: "=",
+            refetchEmployee: '&'
+        },
+        controller: function($scope, postEmployee) {
+            // Form update
+            $scope.$watch(() => [$scope.isShow], function() {
+                $scope.formdata = {
+                    fullName: "",
+                    address : "",
+                    age : 0,
+                    moneyHour : 0,
+                    sex : "Female",
+                    startDate : new Date(),
+                    phone : "",
+                    teamNo : 0 ,
+                }         
+            }, true)
 
-            // Still loading
-            if (useChangeBreakCallBack(() => {
-                this.teamOptions = []
-            }, [changes.teams])) return
+            $scope.$watch(()=>[$scope.teams], function() {
+                if ($scope.teams === undefined) {
+                    $scope.teamOptions = []
+                    return
+                }
 
-            // Update page content
-            useChange(() => {
-                this.teamOptions = this.teams.map(team => {
+                $scope.teamOptions = $scope.teams.map(team => {
                     return { option: team.teamName, value: parseInt(team.teamNo) }
                 })
-            }, [changes.teams])
-        }
+            }, true)
 
-        // Form support values
-        this.teamOptions = []
+            $scope.$watch(()=>[$scope.formdata.fullName], function(){
+                console.log($scope.formdata)
+            }, true)
 
-        // Form values
-        this.fullName = ""
-        this.address = ""
-        this.age = 0
-        this.moneyHour = 0
-        this.sex = "Female"
-        this.startDate = new Date()
-        this.phone = ""
-        this.teamNo = 0
+            // Form support values
+            $scope.teamOptions = []
 
-        // Form validation
-        this.ageWarning = ""
-
-        this.submitHandler = function($event) {
-            $event.preventDefault()
-
-            if (this.age < 18 || this.age > 60) {
-                this.ageWarning = "Age must be between 18 and 60"
-                this.age = 18
-                return
+            // Form values
+            $scope.formdata = {
+                fullName: "",
+                address : "",
+                age : 0,
+                moneyHour : 0,
+                sex : "Female",
+                startDate : new Date(),
+                phone : "",
+                teamNo : 0 ,
             }
 
-            let employeeData = {fullName: this.fullName, address: this.address, age: this.age,
-                moneyHour: this.moneyHour, sex: this.sex, 
-                startDate: this.startDate, phone: this.phone, teamNo: this.teamNo}
+            // Form validation
+            $scope.ageWarning = ""
 
-            postEmployee.post(employeeData)
-        }
-    },
-    controllerAs: 'addEmployeeModalCtrl',
-    bindings: {
-        teams: "<",
-        show: "<",
-        setshow: "&",
+            $scope.submitHandler = function($event) {
+                $event.preventDefault()
+
+                if ($scope.formdata.age < 18 || $scope.formdata.age > 60) {
+                    $scope.ageWarning = "Age must be between 18 and 60"
+                    $scope.formdata.age = 18
+                    return
+                }
+
+                postEmployee.post($scope.formdata).then(function(response) {
+                    console.log("res", $scope.refetchEmployee)
+                    $scope.refetchEmployee({})
+                    $scope.isShow = false
+                })
+            }
+
+            $scope.cancelHandler = function() {
+                $scope.isShow = false
+            }
+        },
+        templateUrl: 'src/overlay/AddEmployeeModal/AddEmployeeModal.html',         
     }
 })

@@ -1,4 +1,4 @@
-<dialogt show="deleteEmployeeDialog.show" setshow="deleteEmployeeDialog.setshow(status)">
+<dialogt is-show="isShow">
     <div class="dialog-container">
         <div class="dialog-header">Are you sure to delete all employees selected?</div>
         <form class="dialog-body">
@@ -7,17 +7,15 @@
             </div>
         </form>
         <div class="dialog-button-group">
-            <button
-                variant="contained"
+            <button type="button"
                 ng-style="{'backgroundColor':'transparent', 'color':'black'}"
-                ng-click="deleteEmployeeDialog.setshow(false)"
+                ng-click="cancelHandler()"
                 >
                 NO
             </button>
             <button
-                variant="contained"
                 ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}"
-                ng-click="deleteEmployeeDialog.deleteHandler($event)"
+                ng-click="deleteHandler($event)"
             >
                 YES
             </button>

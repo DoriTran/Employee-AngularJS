@@ -1,7 +1,7 @@
-<div class='ng-dialog' ng-show='dialogCtrl.show'>
-    <div class='ng-dialog-overlay' ng-click='dialogCtrl.close()'></div>
+<div class='ng-dialog' ng-show='isShow'>
+    <div class='ng-dialog-overlay' ng-click='close()'></div>
     <div class='ng-dialog-wrapper'>
-      <div class='ng-dialog-close' ng-click='dialogCtrl.close()'><i class="fa-solid fa-xmark"></i></div>
+      <div class='ng-dialog-close' ng-click='close()'><i class="fa-solid fa-xmark"></i></div>
       <div ng-transclude></div>
     </div>
 </div>

@@ -1,10 +1,9 @@
-angular.module('app').component('navbar', {
-    templateUrl: 'src/components/Navbar/Navbar.html',
-    controller: function NavbarController() {
-
-    },
-    controllerAs: 'navbarCtrl',
-    bindings: {
-        selected: '@'
+angular.module('app').directive('navbar', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            selected: '@'
+        },
+        templateUrl: 'src/components/Navbar/Navbar.html',
     }
 })

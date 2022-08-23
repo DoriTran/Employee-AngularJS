@@ -1,16 +1,19 @@
 <navbar selected="Employee"></navbar>
 <employee-interaction
-    teams="employeeCtrl.teams"
-    checked="employeeCtrl.checked" checkall="employeeCtrl.checkall"></employee-interaction>
-<search-bar searchKey="employeeCtrl.searchkey" total="employeeCtrl.total"></search-bar>
+    teams="teams"
+    checked="checked" checkall="checkall"
+    refetch-employee="refetchEmployee()"
+    ></employee-interaction>
+<search-bar search-key="searchkey" total="total"></search-bar>
 <div class="search-result-label-wrapper">
     <d class="search-result-label">Search result</div>
 </div>
 <search-result
-    page="employeeCtrl.page" max-page="employeeCtrl.maxPage" set-page="employeeCtrl.setpage(newpage)"
-    searchKey="employeeCtrl.searchkey"
-    data="employeeCtrl.employee_data"
-    teams="employeeCtrl.teams"
-    checked="employeeCtrl.checked" checkall="employeeCtrl.checkall" 
+    page="page" max-page="maxPage" set-page="setpage(newpage)"
+    search-key="searchkey"
+    data="employee_data"
+    teams="teams"
+    checked="checked" checkall="checkall" 
+    refetch-employee="refetchEmployee()"
     ></search-result>
-<pagination page="employeeCtrl.page" max-page="employeeCtrl.maxPage"></pagination>
+<pagination page="page" max-page="maxPage"></pagination>

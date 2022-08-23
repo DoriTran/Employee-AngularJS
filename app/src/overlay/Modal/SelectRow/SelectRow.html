@@ -1,25 +1,25 @@
 <div class="main">
-    <span>{{selectRowCtrl.label}}<span style="color: red">{{selectRowCtrl.warning}}</span></span>
+    <span>{{label}}<span style="color: red">{{warning}}</span></span>
     
     <select
         
-        ng-model="selectRowCtrl.input"
-        ng-required="selectRowCtrl.required"
-        ng-disabled="selectRowCtrl.disabled"
+        ng-model="input"
+        ng-required="required"
+        ng-disabled="disabled"
 
-        ng-change="selectRowCtrl.handleInput()"
+        ng-change="handleInput()"
          >
 
         <option 
-            ng-if="selectRowCtrl.options !== undefined"
-            ng-selected="selectRowCtrl.input === op" 
-            ng-repeat="op in selectRowCtrl.options" 
+            ng-if="options !== undefined"
+            ng-selected="input === op" 
+            ng-repeat="op in options" 
             ng-value="op">{{op}}</option>  
             
         <option 
-            ng-if="selectRowCtrl.pairs !== undefined"
-            ng-selected="selectRowCtrl.input === op.value" 
-            ng-repeat="op in selectRowCtrl.pairs" 
+            ng-if="pairs !== undefined"
+            ng-selected="input === op.value" 
+            ng-repeat="op in pairs" 
             ng-value="op.value">{{op.option}}</option>  
     </select>
     

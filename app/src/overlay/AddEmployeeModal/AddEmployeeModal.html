@@ -1,53 +1,54 @@
-<modal show="addEmployeeModalCtrl.show" setshow="addEmployeeModalCtrl.setshow(status)">
+<modal is-show="isShow">
     <div class="modal-header">Add new Employee</div>
     <div class="modal-container">
-        <form class="modal-body" ng-submit="addEmployeeModalCtrl.submitHandler($event)">
+        <form class="modal-body" ng-submit="submitHandler($event)">
             <div class="modal-info">
                 <div class="modal-single">
                     <input-row class="full-row"
-                    required label="'Full name employee'" placeholder="Nguyễn Văn A" 
-                               input="addEmployeeModalCtrl.fullName" max-length="255"></input-row>
-                    <span ng-style="{'textAlign': 'right', 'width': '100%'}">{{addEmployeeModalCtrl.fullName.length}}/255</span>
+                                required="true" label="Full name employee" placeholder="Nguyễn Văn A" 
+                                input="formdata.fullName" max-length="255"></input-row>
+                    <span ng-style="{'textAlign': 'right', 'width': '100%'}">{{fullName.length}}/255</span>
                 </div>
             </div>
             <div class="modal-info">
                 <div class="modal-left">       
                     <input-row class="full-row"
-                                required label="'Address *'" placeholder="123, Cầu Giấy, Hà Nội" 
-                                input="addEmployeeModalCtrl.address" max-length="300"></input-row>
+                                required="true" label="Address *" placeholder="123, Cầu Giấy, Hà Nội" 
+                                input="formdata.address" max-length="300"></input-row>
                     <input-row class="full-row"
-                                required label="'Age employee *'" warning="addEmployeeModalCtrl.ageWarning" placeholder="18" type="number"
-                                input="addEmployeeModalCtrl.age"></input-row>
+                                required="true" label="Age employee *" warning="ageWarning" placeholder="18" type="number"
+                                input="formdata.age"></input-row>
                     <input-row class="full-row"
-                                required label="'Money/hour *'" placeholder="1000" type="number"
-                                input="addEmployeeModalCtrl.moneyHour"/>                       
+                                required="true" label="Money/hour *" placeholder="1000" type="number"
+                                input="formdata.moneyHour"/>                       
                 </div>
                 <div class="modal-right">
                     <select-row class="full-row"
-                                required label="'Sex employee *'" options="['Male', 'Female']"
-                                input="addEmployeeModalCtrl.sex"></select-row>
+                                required="true" label="Sex employee *" options="['Male', 'Female']"
+                                input="formdata.sex"></select-row>
                     <input-row class="full-row"
-                                required label="'Start day *'" type="date"
-                                input="addEmployeeModalCtrl.startDate"></input-row>
+                                required="true" label="Start day *" type="date"
+                                input="formdata.startDate"></input-row>
                     <input-row class="full-row"
-                                required label="'Phone number *'" placeholder="0123456789"
-                                input="addEmployeeModalCtrl.phone" max-length="12"/>
+                                required="true" label="Phone number *" placeholder="0123456789"
+                                input="formdata.phone" max-length="12"/>
                 </div>
             </div>
             <div class="modal-info">
                 <div class="modal-single">
                     <select-row class="full-row"
-                                required label="'Team *'" pairs="addEmployeeModalCtrl.teamOptions"
-                                input="addEmployeeModalCtrl.teamNo"/>
+                                required="true" label="Team *" pairs="teamOptions"
+                                input="formdata.teamNo"/>
                 </div>
             </div>
             <div class="modal-button-group">
-                <button ng-disabled="mutateNewEmployee.isLoading"
+                <button type="button"
                     ng-style="{'backgroundColor':'transparent', 'color':'black'}"
-                    ng-click="addEmployeeModalCtrl.setshow(false)">
+                    ng-click="cancelHandler()"
+                    >
                         Cancel
                 </button>
-                <button ng-disabled="mutateNewEmployee.isLoading" type="submit"
+                <button type="submit"
                     ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}">
                         Submit
                 </button>

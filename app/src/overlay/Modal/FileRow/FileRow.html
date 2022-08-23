@@ -1,12 +1,12 @@
 <div class="main">
-    <span>{props.label}</span>
+    <span>{{label}}</span>
     <input
         type="file"
-        name={{fileRowCtrl.name}}
-        multiple={{fileRowCtrl.multiple}}
+        name={{name}}
+        multiple={{multiple}}
 
-        ng-model="fileRowCtrl.input"
-        ng-required="fileRowCtrl.required"
-        ng-disabled="fileRowCtrl.disabled"
-        ng-change="fileRowCtrl.handleInput()" />
+        ng-model="input"
+        ng-required="required"
+        ng-disabled="disabled"
+        ng-change="handleInput()" />
 </div>

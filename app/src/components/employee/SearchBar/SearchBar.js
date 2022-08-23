@@ -1,11 +1,10 @@
-angular.module('app').component('searchBar', {
-    templateUrl: 'src/components/employee/SearchBar/SearchBar.html',
-    controller: function searchBarController() {
-
-    },
-    controllerAs: 'searchBarCtrl',
-    bindings: {
-        searchkey: "=",
-        total: '<'
+angular.module('app').directive('searchBar', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            searchKey: '=',
+            total: '=',
+        },
+        templateUrl: 'src/components/employee/SearchBar/SearchBar.html',    
     }
 })

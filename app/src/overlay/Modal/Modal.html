@@ -1,7 +1,7 @@
-<div class='ng-modal' ng-show='modalCtrl.show'>
-    <div class='ng-modal-overlay' ng-click='modalCtrl.close()'></div>
+<div class='ng-modal' ng-show='isShow'>
+    <div class='ng-modal-overlay' ng-click='close()'></div>
     <div class='ng-modal-wrapper'>
-      <div class='ng-modal-close' ng-click='modalCtrl.close()'><i class="fa-solid fa-xmark"></i></div>
+      <div class='ng-modal-close' ng-click='close()'><i class="fa-solid fa-xmark"></i></div>
       <div ng-transclude></div>
     </div>
 </div>

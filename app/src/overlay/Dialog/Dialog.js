@@ -1,13 +1,14 @@
-angular.module('app').component('dialogt', {
-    transclude: true,
-    templateUrl: 'src/overlay/Dialog/Dialog.html',
-    controller: function DialogController() {
-        this.open = () => { this.setshow(true) }  
-        this.close = () => { this.setshow(false)}
-    },
-    controllerAs: 'dialogCtrl',
-    bindings: {
-        show: '<',
-        setshow: '&'
+angular.module('app').directive('dialogt', function() {
+    return {
+        restrict: 'E',
+        transclude: true,   
+        scope: {
+            isShow: '='
+        },
+        controller: function ($scope) {
+            $scope.open = () => { $scope.isShow = true }
+            $scope.close = () => { $scope.isShow = false }
+        },
+        templateUrl: 'src/overlay/Dialog/Dialog.html',
     }
 })

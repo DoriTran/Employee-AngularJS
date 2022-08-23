@@ -1,13 +1,15 @@
-angular.module('app').component('modal', {
-    transclude: true,
-    templateUrl: 'src/overlay/Modal/Modal.html',
-    controller: function ModalController() {
-        this.open = () => { this.setshow(true) }  
-        this.close = () => { this.setshow(false)}
-    },
-    controllerAs: 'modalCtrl',
-    bindings: {
-        show: '<',
-        setshow: '&'
+angular.module('app').directive('modal', function() {
+    return {
+        restrict: 'E',
+        transclude: true,
+        replace: true,
+        scope: {
+            isShow: '='
+        },
+        controller: function($scope) {
+            $scope.open = () => {$scope.isShow = true}
+            $scope.close = () => {$scope.isShow = false}
+        },
+        templateUrl: 'src/overlay/Modal/Modal.html',
     }
 })

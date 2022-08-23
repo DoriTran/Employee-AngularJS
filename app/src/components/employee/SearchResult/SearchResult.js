@@ -1,92 +1,93 @@
-angular.module('app').component('searchResult', {
-    templateUrl: 'src/components/employee/SearchResult/SearchResult.html',
-    controller: function searchResultController() {
-        // Function
-        this.isCheckAll = () => {
-            let currentPageEmployeeNos = this.filter_results.map(employee => employee.no)
-            for (let each of currentPageEmployeeNos) {
-                if (!this.checked.includes(each)) {
-                    this.checkall = false
+angular.module('app').directive('searchResult', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            page: '=',
+            maxPage: '=',
+            searchKey: '=',
+            data: '=',
+            teams: '=',
+            checked: '=',
+            checkall: '=',
+            refetchEmployee: '&'
+        },
+        controller: function($scope, deleteEmployee) {
+            $scope.isCheckAll = () => {
+                let currentPageEmployeeNos = $scope.filter_results.map(employee => employee.no)
+                for (let each of currentPageEmployeeNos) {
+                    if (!$scope.checked.includes(each)) {
+                        $scope.checkall = false
+                        return false
+                    }
+                }
+                if ($scope.checked.length === 0) {
+                    $scope.checkall = false
                     return false
                 }
+                $scope.checkall = true
+                return true
             }
-            if (this.checked.length === 0) {
-                this.checkall = false
-                return false
+            $scope.handleCheckAll = () => {
+                $scope.checkall = !$scope.checkall;
+                let currentPageEmployeeNos = $scope.filter_results.map(employee => employee.no)
+    
+                if ($scope.checkall) {
+                    let newCheckedNos = currentPageEmployeeNos.filter(no => !$scope.checked.includes(no))
+                    $scope.checked = [...$scope.checked, ...newCheckedNos]
+                } else {
+                    $scope.checked = $scope.checked.filter(no => !currentPageEmployeeNos.includes(no))
+                }
             }
-            this.checkall = true
-            return true
-        }
-        this.handleCheckAll = () => {
-            this.checkall = !this.checkall;
-            let currentPageEmployeeNos = this.filter_results.map(employee => employee.no)
-
-            if (this.checkall) {
-                let newCheckedNos = currentPageEmployeeNos.filter(no => !this.checked.includes(no))
-                this.checked = [...this.checked, ...newCheckedNos]
-            } else {
-               this.checked = this.checked.filter(no => !currentPageEmployeeNos.includes(no))
+    
+            $scope.isChecked = (no) => {
+                if ($scope.checked.includes(no))
+                return $scope.checked.includes(no)
             }
-        }
-
-        this.isChecked = (no) => {
-            if (this.checked.includes(no))
-            return this.checked.includes(no)
-        }
-        this.handleCheck = (newCheckedID) => {       
-            if (this.checked.includes(newCheckedID)) {
-                this.checked = this.checked.filter(each_check => each_check !== newCheckedID)
-            }         
-            else {
-                this.checked = [...this.checked, newCheckedID]
+            $scope.handleCheck = (newCheckedID) => {       
+                if ($scope.checked.includes(newCheckedID)) {
+                    $scope.checked = $scope.checked.filter(each_check => each_check !== newCheckedID)
+                }         
+                else {
+                    $scope.checked = [...$scope.checked, newCheckedID]
+                }
             }
-        }
+    
+            $scope.getTeamName = (teamNo) => {
+                if ($scope.teams === undefined) return ""
+                return $scope.teams.filter(team => team.teamNo === teamNo)[0].teamName
+            }
 
-        this.getTeamName = (teamNo) => {
-            if (this.teams === undefined) return ""
-            return this.teams.filter(team => team.teamNo === teamNo)[0].teamName
-        }
+            $scope.deleteHandler = (id) => {
+                deleteEmployee.delete(id).then(function(response) {
+                    $scope.refetchEmployee({})
+                })
+            }
+    
+            // Component variables
+            $scope.filter_results = []
+    
+            // Lifecycle hooks
+            $scope.$watch(()=>[$scope.page, $scope.data, $scope.searchKey], function() {
+                // Check undefined
+                if ($scope.data === undefined) return
 
-        // Component variables
-        this.filter_results = []
-
-        // Lifecycle hooks
-        this.$onChanges = (changes) => {
-            // Still loading
-            if (useChangeBreakCallBack(() => {
-                this.filter_results = []
-            }, [changes.data])) return
-
-            if (useChangeBreak([changes.teams])) return
-
-            // Update page content
-            useChange(() => {
                 // Result
-                let search_result = this.data.filter(
+                let search_result = $scope.data.filter(
                     employee => toLowerCaseNonAccentVietnamese(employee.fullName)
-                    .includes(toLowerCaseNonAccentVietnamese(this.searchkey)))
+                    .includes(toLowerCaseNonAccentVietnamese($scope.searchKey)))
+
                 // Page
-                this.maxPage = Math.ceil(search_result.length / 10)              
-                if (this.page > this.maxPage) {                 
-                    this.setPage({"newpage": this.maxPage})
-                } else if (this.page === 0 && this.maxPage > 0) {
-                    this.setPage({"newpage": 1})
+                $scope.maxPage = Math.ceil(search_result.length / 10)              
+                if ($scope.page > $scope.maxPage) {                 
+                    $scope.page = $scope.maxPage
+                } else if ($scope.page === 0 && $scope.maxPage > 0) {
+                    $scope.page = 1
                 }
                 
                 // Set filter
-                this.filter_results = search_result.slice((this.page - 1) * 10, (this.page - 1) * 10 + 10)
-            }, [changes.page, changes.data, changes.searchkey])
-        }
-    },
-    controllerAs: 'searchResultCtrl',
-    bindings: {
-        page: '<',
-        maxPage: '=',
-        setPage: '&?',
-        searchkey: '<',
-        data: '<',
-        teams: '<',
-        checked: '=',
-        checkall: '='
+                $scope.filter_results = search_result.slice(($scope.page - 1) * 10, ($scope.page - 1) * 10 + 10)                
+            }, true)
+        },
+        templateUrl: 'src/components/employee/SearchResult/SearchResult.html',        
     }
 })

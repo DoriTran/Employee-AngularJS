@@ -1,31 +1,24 @@
-angular.module('app').component('selectRow', {
-    templateUrl: 'src/overlay/Modal/SelectRow/SelectRow.html',
-    controller: function SelectRowController() {
+angular.module('app').directive('selectRow', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            input: '=',
 
-        this.handleInput = () => {
-            // if (this.name === "notObject") {
-            //     this.input = event.target.files[0]
-            // }
-            // else {
-            //     this.input = { ...this.input, [this.name]: event.target.files[0] }
-            // }
-        }
-    },
-    controllerAs: 'selectRowCtrl',
-    bindings: {
-        input: '=',
-        options: '<',
-        pairs: '<',
+            options: '=?',
+            pairs: '=?',
 
-        label: '<',
-        warning: '<',
+            label: '@?',
+            warning: '@?',
+            name: '@?',
+            value: '@?',
+            required: '@?',
+            disabled: '@?',
+          
+            onChangeEvent: '&?'            
+        },
+        controller: function($scope) {
 
-        name: '<',
-        value: '<',
-
-        required: '<',
-        disabled: '<',
-        
-        onChangeEvent: '<'
+        },
+        templateUrl: 'src/overlay/Modal/SelectRow/SelectRow.html',        
     }
 })

@@ -1,15 +1,15 @@
 <div class="main">
-    <span>{{inputRowCtrl.label}}<br><span class="warning-label">{{inputRowCtrl.warning}}</span></span>
+    <span>{{label}}<br><span class="warning-label">{{warning}}</span></span>
     <input
-        type={{inputRowCtrl.type}}
-        name={{inputRowCtrl.name}}
-        placeholder={{inputRowCtrl.placeholder}}
-        max={{inputRowCtrl.max}}
-        min="{{inputRowCtrl.min}}"
-        maxlength="{{inputRowCtrl.maxLength}}"
+        type={{type}}
+        name={{name}}
+        placeholder={{placeholder}}
+        max={{max}}
+        min="{{min}}"
+        maxlength="{{maxLength}}"
 
-        ng-model="inputRowCtrl.input"
-        ng-required="inputRowCtrl.required"
-        ng-disabled="inputRowCtrl.disabled"
-        ng-change="inputRowCtrl.handleInput()"  />
+        ng-model="input"
+        ng-required="required"
+        ng-disabled="disabled"
+        ng-change="handleInput()"  />
 </div>

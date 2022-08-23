@@ -51,5 +51,6 @@ a.navbar-button-unselected {
 a.navbar-button-unselected:hover, a.navbar-button-selected:active {
     background-color: #007bff;
     color: white;
+    cursor: pointer;
 }
 

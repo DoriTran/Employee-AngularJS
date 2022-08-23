@@ -3,8 +3,8 @@
         <tr>
             <th>
                 <input type="checkbox" class="check-box-search-results"
-                ng-checked="searchResultCtrl.isCheckAll()"
-                ng-click="searchResultCtrl.handleCheckAll()"/>
+                ng-checked="isCheckAll()"
+                ng-click="handleCheckAll()"/>
             </th>
             <th>No</th>
             <th>FullName</th>
@@ -15,20 +15,20 @@
     </thead>
     
     <tbody>
-        <tr ng-repeat="employee in searchResultCtrl.filter_results">
+        <tr ng-repeat="employee in filter_results">
             <td>
                 <input type="checkbox" class="check-box-search-results"
-                ng-checked="searchResultCtrl.isChecked(employee.no)"
-                ng-click="searchResultCtrl.handleCheck(employee.no)"/>
+                ng-checked="isChecked(employee.no)"
+                ng-click="handleCheck(employee.no)"/>
             </td>
             <td>{{employee.no}}</td>
             <td>{{employee.fullName}}</td>
             <td>{{employee.phone}}</td>
-            <td>{{searchResultCtrl.getTeamName(employee.teamNo)}}</td>
+            <td>{{getTeamName(employee.teamNo)}}</td>
             <td>
                 <div class="option-wrapper">
-                    <a ui-sref="/profile/id=employee.no" class="info-button"><i class="fa-solid fa-info"></i></a>
-                    <i class="fa-solid fa-trash-can delete-butto" ng-click="searchResultCtrl.deleteHandler(employee.no)"></i>
+                    <a ui-sref="/profile/id=employee.no"><i class="fa-solid fa-info info-button"></i></a>
+                    <i class="fa-solid fa-trash-can delete-button" ng-click="deleteHandler(employee.no)"></i>
                 </div>
             </td>
         </tr>
