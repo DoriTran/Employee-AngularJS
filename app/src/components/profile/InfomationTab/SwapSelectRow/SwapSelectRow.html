@@ -1,0 +1,19 @@
+<div class="swap-input-row">
+    <div ng-class="disabled ? 'info-disabled-input' : 'info-enabled-input'" class="swap-input-label">
+        {{label}}
+    </div>
+    <select ng-disabled="disabled"
+        ng-class="disabled ? 'info-disabled-input' : 'info-enabled-input'" class="swap-input-content">
+        <option 
+            ng-if="options !== undefined"
+            ng-selected="model === op" 
+            ng-repeat="op in options" 
+            ng-value="op">{{op}}</option>  
+            
+        <option 
+            ng-if="pairs !== undefined"
+            ng-selected="model === op.value" 
+            ng-repeat="op in pairs" 
+            ng-value="op.value">{{op.option}}</option>  
+    </select>
+</div>

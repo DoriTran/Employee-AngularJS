@@ -44,8 +44,8 @@ angular.module('app', [
       template: '<div>Team Page</div>'
     })
     .state('profile', {
-      url: "/profile",
-      template: '<div>Profile Page</div>'
+      url: "/profile/id=:EmployeeID",
+      template: '<profile></profile>'
     })
   $urlRouterProvider.otherwise("/employee");
 })

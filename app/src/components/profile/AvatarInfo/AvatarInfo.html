@@ -1,0 +1,16 @@
+<div ng-if="profile !== undefined" class="avatar-wrapper">
+    <div class="image-wrapper">
+        <img src="{{getAvatarSource()}}" alt="Avatar" class="avatar-img"></img>
+    </div>
+    <div class="pill-row">
+        <pill-info key-info="No" value={{profile.no}} background-color="#007bff" color="white" ></pill-info>
+        <pill-info key-info="Age" value={{profile.age}} background-color="#17a2b8" color="white" ></pill-info>
+    </div>
+    <div class="pill-row">
+        <pill-info key-info="Sex" value={{profile.sex}} background-color="#ffc107" color="black" ></pill-info>
+    </div>
+    <div class="pill-row">
+        <button class="btn-upload-avatar" ng-click="isOpeningAvatarModal = true">Upload Avatar</button>
+    </div>
+    <!-- {isOpeningAvatarModal && <UploadAvatarModal no={props.profile.no} onBackdropClick={() => setOpeningAvatarModal(false)} refetch={props.refetch}/>} -->
+</div>

@@ -1,0 +1,28 @@
+<div class="tab-wrapper">
+    <div class="tab-header">
+        <span class="tab-title">WORKINGS</span>
+        <i class="fa-solid fa-circle-plus" ng-click="isOpenWorkingModel = true"></i>
+    </div>
+    <div class="tab-body">
+        <table class="tab-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Date</th>
+                    <th>Hour</th>
+                    <th>Option</th>
+                </tr>                
+            </thead>
+            <tbody>
+                <tr ng-repeat="working in workings">
+                    <td>{{working.workingNo}}</td>
+                    <td>{{working.date}}</td>
+                    <td>{{working.hour}}</td>
+                    <td><i class="fa-solid fa-trash-can" ng-click="deleteHandler(working.workingNo)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- {addWorking && <AddWorkingModal onBackdropClick={() => setAddWorking(false)} isDateExists={isDateExists}
+     no={props.employeeNo} refetch={refetch}/>} -->
+</div>

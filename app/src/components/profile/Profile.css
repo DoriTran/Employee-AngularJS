@@ -1,0 +1,120 @@
+.tab-wrapper {
+    padding: 20px;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 45px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.tab-title {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.tab-body {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+.tab-wrapper {
+    padding: 30px 0 30px 30px;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+}
+
+.unselected-btn {
+    float: left;
+    background-color: #fff;
+    color: #689dff;
+    border: none;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding: 5px 25px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.selected-btn {
+    float: left;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-top: 1px solid rgb(201, 201, 201);
+    border-left: 1px solid rgb(201, 201, 201);
+    border-right: 1px solid rgb(201, 201, 201);
+    padding: 5px 25px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.fillout {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding: 5px 25px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 10%;
+}
+
+.tab-add-button {
+    cursor: pointer;
+    text-align: center;
+    line-height: 45px;
+    padding-top: 15px;
+}
+
+.tab-table {
+    width: 100%;
+    line-height: 50px;
+}
+.tab-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+
+.tab-table tr {
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+.tab-table td:last-child, .tab-table th:last-child {
+    text-align: center;
+}
+.tab-table td:nth-child(1), .tab-table th:nth-child(1) {
+    width: 15%;
+    text-align: left;
+    padding-left: 25px;
+} 
+.tab-table td:nth-child(1), .tab-table th:nth-child(1) {
+    width: 15%;
+    text-align: left;
+    padding-left: 25px;
+} 
+.tab-table td:nth-child(2), .tab-table th:nth-child(2) {
+    width: 50%;
+}
+.tab-table td:nth-child(2), .tab-table th:nth-child(2) {
+    width: 50%;
+}
+.tab-table td:nth-child(3), .tab-table th:nth-child(3) {
+    width: 25%;
+}
+.tab-table td:nth-child(4), .tab-table th:nth-child(4) {
+    width: 10%;
+}

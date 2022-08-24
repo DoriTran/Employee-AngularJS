@@ -9,12 +9,7 @@ angular.module('app').directive('employeeInteraction', function() {
         },
         controller: function($scope) {
             $scope.isOpeningAddModal = false;
-            $scope.isOpeningDelModal = false;
-
-            $scope.$watch(()=> [$scope.isOpeningAddModal, $scope.isOpeningDelModal], 
-            function (newValue) { 
-                console.log(newValue)
-            }, true)            
+            $scope.isOpeningDelModal = false;      
         },
         templateUrl: '/src/components/employee/EmployeeInteraction/EmployeeInteraction.html',
     }

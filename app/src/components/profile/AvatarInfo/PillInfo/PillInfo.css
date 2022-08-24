@@ -1,0 +1,16 @@
+.pill-info {
+    background-color:blue;
+    color:black;
+    border-radius: 7px;
+    font-size: 11px;
+    width: fit-content;
+    padding: 4px;
+    font-weight: bold;
+    margin: 4px;
+}
+
+.pill-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,0 +1,28 @@
+<div class="tab-wrapper">
+    <div class="tab-header">
+        <span class="tab-title">ADVANCES</span>
+        <i class="fa-solid fa-circle-plus" ng-click="isOpenAdvanceModel = true"></i>
+    </div>
+    <div class="tab-body">
+        <table class="tab-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Date</th>
+                    <th>Money</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="advance in advances">
+                    <td>{{advance.advanceNo}}</td>
+                    <td>{{advance.date}}</td>
+                    <td>{{advance.money}}</td>
+                    <td><i class="fa-solid fa-trash-can" ng-click="deleteHandler(advance.advanceNo)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- {addAdvance && <AddAdvanceModal onBackdropClick={() => setAddAdvance(false)} isDateExists={isDateExists}
+        no={props.employeeNo} refetch={refetch} />} -->
+    </div>

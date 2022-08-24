@@ -32,9 +32,6 @@ angular.module('app').directive('addEmployeeModal', function() {
                 })
             }, true)
 
-            $scope.$watch(()=>[$scope.formdata.fullName], function(){
-                console.log($scope.formdata)
-            }, true)
 
             // Form support values
             $scope.teamOptions = []

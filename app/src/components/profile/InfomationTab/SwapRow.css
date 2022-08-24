@@ -1,0 +1,35 @@
+.swap-input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.swap-input-label {
+    padding-left: 10px;
+    border: 1px solid rgb(201, 201, 201);
+    border-right: none;
+    border-radius: 5px 0 0 5px ;
+    width: 30%;
+}
+.swap-input-content {
+    border: 1px solid rgb(201, 201, 201);
+    border-left: none;
+    border-radius: 0 5px 5px 0 ;
+    width: 70%;
+    height: 100%;
+    margin-top: 0 !important;
+}
+
+.info-enabled-input {
+    background-color: #fff;
+    font-size: 20px;
+    color: black;
+}
+
+.info-disabled-input {
+    background-color: #f8f9fa;
+    font-size: 20px;
+    color: black;
+}

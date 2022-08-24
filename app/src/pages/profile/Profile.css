@@ -1,0 +1,14 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.profile-left-side {
+    width: 25%;
+}
+
+.profile-right-side {
+    width: 75%;
+}

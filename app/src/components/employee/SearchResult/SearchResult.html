@@ -27,7 +27,7 @@
             <td>{{getTeamName(employee.teamNo)}}</td>
             <td>
                 <div class="option-wrapper">
-                    <a ui-sref="/profile/id=employee.no"><i class="fa-solid fa-info info-button"></i></a>
+                    <a ui-sref="profile({'EmployeeID': employee.no})"><i class="fa-solid fa-info info-button"></i></a>
                     <i class="fa-solid fa-trash-can delete-button" ng-click="deleteHandler(employee.no)"></i>
                 </div>
             </td>
