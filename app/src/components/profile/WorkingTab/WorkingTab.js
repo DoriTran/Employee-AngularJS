@@ -13,7 +13,6 @@ angular.module('app').directive('workingTab', function() {
             }
             getWorkingById.get($scope.employeeNo).then(response => {
                 $scope.workings = response.data
-                console.log($scope.workings)
             })
         },
         templateUrl: '/src/components/profile/WorkingTab/WorkingTab.html',        

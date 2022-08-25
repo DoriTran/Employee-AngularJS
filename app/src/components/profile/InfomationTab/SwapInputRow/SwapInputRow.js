@@ -5,6 +5,7 @@ angular.module('app').directive('swapInputRow', function() {
         scope: {
             label: '@',
             model: '=',
+            type: '@?',
             disabled: '=',
             holder: '@',
         },

@@ -1,7 +1,7 @@
 <div class="interact-nav">
     <h3 class="interact-nameDisplay">{{profile.fullName}}</h3>
     <div class="interact-button-wrapper">
-        <button ng-if="tab === 'information'" class="interactButton" ng-click="changeState()">
+        <button class="interactButton" ng-click="changeState()">
             <i ng-if="!isEditting" class="fa-solid fa-pen-to-square"></i>
             <i ng-if="isEditting" class="fa-solid fa-clipboard-check"></i>
         </button>
@@ -9,7 +9,5 @@
             <i class="fa-solid fa-trash-can"></i>
         </button>
     </div>
-    <!-- {isOpeningDelModal && 
-        <DeleteProfileDialog onBackdropClick={()=>setOpeningDelModal(false)} refetch={props.refetch}
-        profile={props.profile}/>} -->
+    <delete-profile-dialog is-show="isOpeningDelModal" employee-id="profile.no"></delete-profile-dialog>
 </div>

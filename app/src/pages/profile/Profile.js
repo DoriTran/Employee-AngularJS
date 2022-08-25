@@ -8,7 +8,6 @@ angular.module('app').directive('profile', function() {
 
             $scope.refetchProfile = function() {
                 getEmployeeInfo.get($scope.EmployeeID).then(function(response) {
-                    console.log('refetching profile data')
                     $scope.profile = response.data.data
                     $scope.profile.startDate = $scope.profile.startDate.slice(0, 10)
                 })
@@ -17,7 +16,6 @@ angular.module('app').directive('profile', function() {
 
             $scope.refetchteam = function () {
                 getAllTeam.get().then(response => {
-                    console.log('refetching team data')
                     $scope.teams = response.data
                 })
             }
@@ -27,6 +25,10 @@ angular.module('app').directive('profile', function() {
                 if ($scope.teams === undefined || $scope.profile === undefined) return ""
                 return $scope.teams.filter(team => team.teamNo === $scope.profile.teamNo)[0].teamName
             }
+
+            $scope.$watch(()=>[$scope.tab], function() {
+                console.log('Tab: ',$scope.tab)
+            }, true)
         },
         templateUrl: '/src/pages/profile/Profile.html',        
     }

@@ -61,7 +61,6 @@ angular.module('app').directive('addEmployeeModal', function() {
                 }
 
                 postEmployee.post($scope.formdata).then(function(response) {
-                    console.log("res", $scope.refetchEmployee)
                     $scope.refetchEmployee({})
                     $scope.isShow = false
                 })

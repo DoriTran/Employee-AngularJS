@@ -1,11 +1,11 @@
 <div class="tab-wrapper">
     <button ng-class='tab === "information" ? "selected-btn" : "unselected-btn"'
-            ng-click="tab = 'information'">INFORMATION</button>
+            ng-click="changeTab('information')">INFORMATION</button>
     <button ng-class='tab === "workings" ? "selected-btn" : "unselected-btn"'
-            ng-click="tab = 'workings'">WORKINGS</button>
+            ng-click="changeTab('workings')">WORKINGS</button>
     <button ng-class='tab === "advances" ? "selected-btn" : "unselected-btn"' 
-            ng-click="tab = 'advances'">ADVANCES</button>
+            ng-click="changeTab('advances')">ADVANCES</button>
     <button ng-class='tab === "statistics" ? "selected-btn" : "unselected-btn"'
-            ng-click="tab = 'statistics'">STATISTICS</button>
+            ng-click="changeTab('statistics')">STATISTICS</button>
     <div class="fillout" disabled></div>
 </div>

@@ -1,0 +1,24 @@
+<dialogt is-show="isShow">
+    <div class="dialog-container">
+        <div class="dialog-header">Are you sure to delete this employee?</div>
+        <form class="dialog-body">
+            <div class="dialog-message">
+                <div class="dialog-single">All data of this employee will be deleted</div>
+            </div>
+        </form>
+        <div class="dialog-button-group">
+            <button type="button"
+                ng-style="{'backgroundColor':'transparent', 'color':'black'}"
+                ng-click="cancelHandler()"
+                >
+                NO
+            </button>
+            <button
+                ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}"
+                ng-click="deleteHandler($event)"
+            >
+                YES
+            </button>
+        </div>
+    </div>
+</dialogt>
