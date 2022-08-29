@@ -1,12 +1,14 @@
-<navbar selected="Employee"></navbar>
-<profile-interaction tab="tab" profile="profile" refetch-profile="refetchProfile()" is-editting="isEditting"></profile-interaction>
-<div class="profile-container">
-    <avatar-info class="profile-left-side" profile="profile" refetch="refetchProfile()"></avatar-info>
-    <div class="profile-right-side">
-        <detail-button-group tab="tab"></detail-button-group>
-        <infomation-tab ng-show='profile !== undefined && tab === "information"' profile="profile" formdata="formdata" teams="teams" is-editting="isEditting"></infomation-tab>
-        <working-tab ng-show='profile !== undefined && tab === "workings" ' employee-no="profile.no" ></working-tab>
-        <advance-tab ng-show='profile !== undefined && tab === "advances" ' employee-no="profile.no" ></advance-tab>
-        <statistic-tab ng-show='profile !== undefined && tab === "statistics" ' employee-no="profile.no" ></statistic-tab>
-    </div>
+<div ng-if="profile !== undefined">
+    <navbar selected="Employee"></navbar>
+    <profile-interaction tab="tab" profile="profile" refetch-profile="refetchProfile()" is-editting="isEditting"></profile-interaction>
+    <div class="profile-container">
+        <avatar-info class="profile-left-side" employee-no="profile.no" profile="profile" refetch-profile="refetchProfile()"></avatar-info>
+        <div class="profile-right-side">
+            <detail-button-group tab="tab"></detail-button-group>
+            <infomation-tab ng-show='tab === "information"' profile="profile" formdata="formdata" teams="teams" is-editting="isEditting"></infomation-tab>
+            <working-tab ng-show='tab === "workings" ' employee-no="profile.no" ></working-tab>
+            <advance-tab ng-show='tab === "advances" ' employee-no="profile.no" ></advance-tab>
+            <statistic-tab ng-show='tab === "statistics" ' employee-no="profile.no" ></statistic-tab>
+        </div>
+    </div>    
 </div>

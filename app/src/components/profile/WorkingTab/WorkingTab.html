@@ -18,11 +18,10 @@
                     <td>{{working.workingNo}}</td>
                     <td>{{working.date}}</td>
                     <td>{{working.hour}}</td>
-                    <td><i class="fa-solid fa-trash-can" ng-click="deleteHandler(working.workingNo)"></i></td>
+                    <td><i class="fa-solid fa-trash-can tab-button" ng-click="deleteHandler(working.workingNo)"></i></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <!-- {addWorking && <AddWorkingModal onBackdropClick={() => setAddWorking(false)} isDateExists={isDateExists}
-     no={props.employeeNo} refetch={refetch}/>} -->
+    <add-working-modal is-show="isOpenWorkingModel" refetch-working="refetchWorking()" employee-id="employeeNo"></add-working-modal>
 </div>

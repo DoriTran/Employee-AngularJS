@@ -18,11 +18,10 @@
                     <td>{{advance.advanceNo}}</td>
                     <td>{{advance.date}}</td>
                     <td>{{advance.money}}</td>
-                    <td><i class="fa-solid fa-trash-can" ng-click="deleteHandler(advance.advanceNo)"></i></td>
+                    <td><i class="fa-solid fa-trash-can tab-button" ng-click="deleteHandler(advance.advanceNo)"></i></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <!-- {addAdvance && <AddAdvanceModal onBackdropClick={() => setAddAdvance(false)} isDateExists={isDateExists}
-        no={props.employeeNo} refetch={refetch} />} -->
-    </div>
+    <add-advance-modal is-show="isOpenAdvanceModel" refetch-advance="refetchAdvance()" employee-id="employeeNo"></add-advance-modal>
+</div>

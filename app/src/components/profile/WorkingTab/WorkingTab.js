@@ -4,16 +4,19 @@ angular.module('app').directive('workingTab', function() {
         scope: {
             employeeNo: '='
         },
-        controller: function($scope, getWorkingById, postWorking) {
+        controller: function($scope, getWorkingById, deleteWorking) {
             $scope.isOpenWorkingModel = false
-            $scope.submitHandler = function() {
-            }
             $scope.deleteHandler = function(id) {
-
+                deleteWorking.delete($scope.employeeNo, id).then(response => {
+                    $scope.refetchWorking()
+                })
             }
-            getWorkingById.get($scope.employeeNo).then(response => {
-                $scope.workings = response.data
-            })
+            $scope.refetchWorking = function() {
+                getWorkingById.get($scope.employeeNo).then(response => {
+                    $scope.workings = response.data
+                })
+            }
+            $scope.refetchWorking()
         },
         templateUrl: '/src/components/profile/WorkingTab/WorkingTab.html',        
     }

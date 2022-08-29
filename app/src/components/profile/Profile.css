@@ -25,6 +25,10 @@
     row-gap: 30px;
 }
 
+.tab-button:hover {
+    cursor: pointer;
+}
+
 .tab-wrapper {
     padding: 30px 0 30px 30px;
     background-color: #fff;

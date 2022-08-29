@@ -2,11 +2,7 @@
     <span>{{label}}</span>
     <input
         type="file"
-        name={{name}}
-        multiple={{multiple}}
-
-        ng-model="input"
+        onchange="angular.element(this).scope().SelectFile(event)"
         ng-required="required"
-        ng-disabled="disabled"
-        ng-change="handleInput()" />
+        ng-disabled="disabled" />
 </div>

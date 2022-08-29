@@ -1,0 +1,29 @@
+<modal is-show="isShow">
+    <div class="modal-header">Add new Advance Date</div>
+    <div class="modal-container">
+        <form class="modal-body" ng-submit="submitHandler($event)">
+            <div class="modal-info">
+                <div class="modal-single">
+                    <input-row class="full-row" 
+                                required="true" label="Date *" type="date"
+                                input="formdata.date"></input-row>
+                    <input-row class="full-row"
+                                required="true" label="Money *"
+                                input="formdata.money"></input-row>
+                </div>
+            </div>
+            <div class="modal-button-group">
+                <button type="button"
+                    ng-style="{'backgroundColor':'transparent', 'color':'black'}"
+                    ng-click="cancelHandler()"
+                    >
+                        Cancel
+                </button>
+                <button type="submit"
+                    ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}">
+                        Submit
+                </button>
+            </div>
+        </form>
+    </div>    
+</modal>

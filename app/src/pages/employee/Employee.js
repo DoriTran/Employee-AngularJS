@@ -14,7 +14,6 @@ angular.module('app').directive('employee', function () {
 
             // Fetching data from server
             $scope.refetchEmployee = function () {
-                console.log('refetching employee')
                 getAllEmployee.get().then(response => {
                     $scope.employee_data = response.data
                     $scope.page = response.data.length !== 0 ? 1 : 0

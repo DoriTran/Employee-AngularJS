@@ -25,10 +25,6 @@ angular.module('app').directive('profile', function() {
                 if ($scope.teams === undefined || $scope.profile === undefined) return ""
                 return $scope.teams.filter(team => team.teamNo === $scope.profile.teamNo)[0].teamName
             }
-
-            $scope.$watch(()=>[$scope.tab], function() {
-                console.log('Tab: ',$scope.tab)
-            }, true)
         },
         templateUrl: '/src/pages/profile/Profile.html',        
     }

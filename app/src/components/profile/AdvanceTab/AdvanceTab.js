@@ -4,17 +4,19 @@ angular.module('app').directive('advanceTab', function() {
         scope: {
             employeeNo: '='
         },
-        controller: function($scope, getAdvanceById, postAdvance) {
+        controller: function($scope, getAdvanceById, deleteAdvance) {
             $scope.isOpenAdvanceModel = false
-            $scope.submitHandler = function() {
-                
-            }
             $scope.deleteHandler = function(id) {
-
+                deleteAdvance.delete($scope.employeeNo, id).then(response => {
+                    $scope.refetchAdvance()
+                })
             }
-            getAdvanceById.get($scope.employeeNo).then(response => {
-                $scope.advances = response.data
-            })
+            $scope.refetchAdvance = function() {
+                getAdvanceById.get($scope.employeeNo).then(response => {
+                    $scope.advances = response.data
+                })                
+            }
+            $scope.refetchAdvance()
         },
         templateUrl: '/src/components/profile/AdvanceTab/AdvanceTab.html',        
     }
