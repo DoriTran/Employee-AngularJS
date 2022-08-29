@@ -1,0 +1,25 @@
+<div class="team-detail-container">
+    <h3 class="team-detail-header">Result all employees team {{selectedTeamName}} - Total {{members.length}} members
+    </h3>
+    <table class="team-detail">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>FullName</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Sex</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="member in members">
+                <td>{{member.no}}</td>
+                <td><a class="member-hover" ui-sref="profile({'EmployeeID': member.no})">{{member.fullName}}</a></td>
+                <td>{{member.phone}}</td>
+                <td>{{member.address}}</td>
+                <td>{{member.sex}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

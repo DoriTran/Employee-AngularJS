@@ -1,0 +1,56 @@
+.team-detail-container {
+    width: 70%;
+    border: 2px solid #666;
+    border-radius: 25px;
+    margin: 30px 0 0 30px;
+    padding: 0 30px 30px 0;
+    float: left;
+}
+
+.team-detail-header {
+    margin: 30px 30px 0 30px;
+}
+
+table.team-detail {
+    width: 100%;
+    line-height: 50px;
+    margin: 0px 0 0 15px;
+}
+
+table.team-detail tr {
+    border-bottom: 1px solid rgb(201, 201, 201);
+
+}
+
+table.team-detail td:last-child, table.team-detail th:last-child {
+    text-align: center;
+}
+
+table.team-detail td:nth-child(1), table.team-detail th:nth-child(1)  {
+    width: 15%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+table.team-detail td:nth-child(2), table.team-detail table.team-detail th:nth-child(2) {
+    width: 30%;
+}
+
+table.team-detail td:nth-child(3), table.team-detail th:nth-child(3) {
+    width: 20%;
+}
+
+table.team-detail td:nth-child(4), table.team-detail th:nth-child(4) {
+    width: 20%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.team-detail td:nth-child(5), table.team-detail th:nth-child(5) {
+    width: 15%;
+}
+
+.member-hover {
+    cursor: pointer;
+}

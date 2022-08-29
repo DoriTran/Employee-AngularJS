@@ -41,7 +41,7 @@ angular.module('app', [
     })
     .state('team', {
       url: "/team",
-      template: '<div>Team Page</div>'
+      template: '<team></team>',
     })
     .state('profile', {
       url: "/profile/id=:EmployeeID",

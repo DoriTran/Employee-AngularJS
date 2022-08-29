@@ -14,9 +14,6 @@ angular.module('app').directive('avatarInfo', function() {
                 }
                 return $scope.profile.sex === "Female" ? "/src/components/profile/DefaultWomanAvatar.png" : "/src/components/profile/DefaultManAvatar.png"
             }
-            $scope.$watch(()=> [$scope.isOpenAvatarModal], function(newValue) {
-                console.log(newValue)
-            }, true)
         },
         templateUrl: 'src/components/profile/AvatarInfo/AvatarInfo.html',        
     }

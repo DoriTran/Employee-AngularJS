@@ -1,0 +1,19 @@
+<div class="team-table-container">
+    <h3 class="team-table-header">Total {{teams.length}} teams</h3>
+    <table class="team-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NameTeam</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="team in sortedTeam">
+                <td>{{team.teamNo}}</td>
+                <td>{{team.teamName}}</td>
+                <td><i class="fa-solid fa-address-card delete-button" ng-click="changeTeam(team.teamNo)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

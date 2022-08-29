@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="./src/components/profile/Profile.css">
   <link rel="stylesheet" href="./src/components/profile/InfomationTab/SwapRow.css">
 
+  <link rel="stylesheet" href="./src/pages/team/Team.css">
+  <link rel="stylesheet" href="./src/components/team/TeamInteraction/TeamInteraction.css">
+  <link rel="stylesheet" href="./src/components/team/TeamTable/TeamTable.css">
+  <link rel="stylesheet" href="./src/components/team/TeamDetail/TeamDetail.css">
+
   <link rel="stylesheet" href="./src/overlay/Modal/Modal.css">
   <link rel="stylesheet" href="./src/overlay/Modal/ModalRow.css">
   <link rel="stylesheet" href="./src/overlay/Modal/ModalContent.css">
@@ -41,13 +46,10 @@
   <div ui-view></div>
   <!-- build angular js -->
     <!-- ASSETS -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.30/angular-ui-router.js"></script>
-
-
 
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -85,6 +87,11 @@
   <script src="./src/components/profile/AvatarInfo/PillInfo/PillInfo.js"></script>
   <script src="./src/components/profile/InfomationTab/SwapInputRow/SwapInputRow.js"></script>
   <script src="./src/components/profile/InfomationTab/SwapSelectRow/SwapSelectRow.js"></script>
+
+  <script src="./src/pages/team/Team.js"></script>
+  <script src="./src/components/team/TeamInteraction/TeamInteraction.js"></script>
+  <script src="./src/components/team/TeamTable/TeamTable.js"></script>
+  <script src="./src/components/team/TeamDetail/TeamDetail.js"></script>
     <!-- / -->
 
     <!-- OVERLAY -->
@@ -114,6 +121,7 @@
   <script src="./src/services/employee/getEmployeeInfo.js"></script>
   <script src="./src/services/employee/updateEmployeeById.js"></script>
   <script src="./src/services/employee/addNewAvatar.js"></script>
+  <script src="./src/services/employee/getAllEmployeeByTeam.js"></script>
 
   <script src="./src/services/working/getWorkingById.js"></script>
   <script src="./src/services/working/postWorking.js"></script>
@@ -124,6 +132,7 @@
   <script src="./src/services/advance/deleteAdvance.js"></script>
 
   <script src="./src/services/team/getAllTeam.js"></script>
+  <script src="./src/services/team/postTeam.js"></script>
     <!-- / -->
 
     <!-- UTILS -->

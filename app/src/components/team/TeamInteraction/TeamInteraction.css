@@ -1,0 +1,22 @@
+.add-team-btn {
+    float: right;
+    font-size: 35px;
+    background: rgba(0,0,0,0);
+    border: none;
+    height: 100%;
+}
+
+.interact-nameDisplay {
+    float: left;
+    margin: 15px;
+    font-family: 'Tahoma';
+}
+
+.interact-button-wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 10%;
+}
