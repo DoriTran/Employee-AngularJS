@@ -1,0 +1,26 @@
+<modal is-show="isShow">
+    <div class="modal-header">Add new Team</div>
+    <div class="modal-container">
+        <form class="modal-body" ng-submit="submitHandler($event)">
+            <div class="modal-info">
+                <div class="modal-single">
+                    <input-row class="full-row" required="true" label="Team Name" placeholder="Engineer" input="formdata.teamName" max-length="255">
+                    </input-row>
+                    <span ng-style="{'textAlign': 'right', 'width': '100%'}">{{formdata.teamName.length}}/255</span>
+                </div>
+            </div>
+            <div class="modal-button-group">
+                <button type="button"
+                    ng-style="{'backgroundColor':'transparent', 'color':'black'}"
+                    ng-click="cancelHandler()"
+                    >
+                        Cancel
+                </button>
+                <button type="submit"
+                    ng-style="{'backgroundColor':'#ededed', 'marginLeft':'5px', 'color':'black'}">
+                        Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</modal>

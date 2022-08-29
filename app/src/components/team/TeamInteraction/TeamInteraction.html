@@ -1,6 +1,5 @@
 <div class="interact-nav">
     <h3 class="interact-nameDisplay">Team</h3>
     <button class="add-team-btn" ng-click="isOpenTeamModal = true"><i class="fa-solid fa-circle-plus"></i></button>
-    <!-- {isOpeningAddModal && 
-        <AddNewTeamModal onBackdropClick={()=>setOpeningAddModal(false)} setTeams={props.setTeams} refetch={props.refetch}/>} -->
+    <add-team-modal is-show="isOpenTeamModal" refetch-team="refetchTeam()"></add-team-modal>
 </div>

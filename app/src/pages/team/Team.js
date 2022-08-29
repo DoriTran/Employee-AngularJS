@@ -8,7 +8,7 @@ angular.module('app').directive('team', function() {
                 else return 0;
             }
 
-            $scope.refectTeam = function() {
+            $scope.refetchTeam = function() {
                 getAllTeam.get().then(function(response) {
                     console.log("Refect Team")
                     $scope.teams = response.data
@@ -17,7 +17,7 @@ angular.module('app').directive('team', function() {
                     $scope.selectedTeamName = ($scope.selectedTeam > 0) ? $scope.sortedTeam.filter(team => team.teamNo === $scope.selectedTeam)[0].teamName : "None"
                 })
             }
-            $scope.refectTeam()
+            $scope.refetchTeam()
 
             $scope.$watch(() => [$scope.selectedTeam], function() { 
                 $scope.selectedTeamName = ($scope.selectedTeam > 0) ? $scope.sortedTeam.filter(team => team.teamNo === $scope.selectedTeam)[0].teamName : "None"
